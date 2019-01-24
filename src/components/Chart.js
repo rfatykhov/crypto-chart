@@ -133,37 +133,42 @@ class Chart extends React.Component {
     return (
       <>
         <div>
-          <div className="coins">
-            <Card
-              name="Bitcoin (BTC)"
-              src={"BTC.png"}
-              alt="Bitcoin"
-              value={this.state.btcusd}
-            />
-            <Card
-              name="Litecoin (LTC)"
-              src={"LTC.png"}
-              alt="Litecoin"
-              value={this.state.ltcusd}
-            />
-            <Card
-              name="Ethereum (ETH)"
-              src={"ETH.png"}
-              alt="Ethereum"
-              value={this.state.ethusd}
-            />
+          <div className="container">
+            <div className="coins">
+              <Card
+                name="Bitcoin (BTC)"
+                src={"BTC.png"}
+                alt="Bitcoin"
+                value={this.state.btcusd}
+                className="item"
+              />
+              <Card
+                name="Litecoin (LTC)"
+                src={"LTC.png"}
+                alt="Litecoin"
+                value={this.state.ltcusd}
+                className="item"
+              />
+              <Card
+                name="Ethereum (ETH)"
+                src={"ETH.png"}
+                alt="Ethereum"
+                value={this.state.ethusd}
+                className="item"
+              />
+            </div>
           </div>
-        </div>
-        <div>
           <div>
             <div>
-              {this.state.showChart ? (
-                <ReactFC
-                  {...this.chartConfigs}
-                  dataSource={this.state.dataSource}
-                  onRender={this.getChartRef.bind(this)}
-                />
-              ) : null}
+              <div>
+                {this.state.showChart ? (
+                  <ReactFC
+                    {...this.chartConfigs}
+                    dataSource={this.state.dataSource}
+                    onRender={this.getChartRef.bind(this)}
+                  />
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
